@@ -7,7 +7,7 @@ import time
 '''
 Program input:
 python sort-test.py _algorithm_(string (name)) _tests_(int (0-4))
-You can also leave out all parameters for help with the function
+You can also leave out all parameters for function help
 
 Parameter 1: Name of Algorithm / Empty for help
 Parameter 2: 1: small, 2: medium, 3: large, 0: all
@@ -84,14 +84,22 @@ sort_dict = {'selection': st.selection, 'insertion': st.insertion}
 # Dictionary mapping benchmark test suite to user input
 size_dict = {1: 'small', 2: 'medium', 3: 'large', 0: 'all'}
 
-# If entered arguments are broken
+# Error message
 def broken_args():
-    print("Please ensure the arguments are correct. The argument format is " +
-          " 'python test.py _number_of_arrays(0-10)_ _random(boolean)_'. " +
-          " The arguments surrounded by underscores are optional.")
+    print("Please ensure the arguments are correct")
+    help()
 
+# Error message
 def wrong_algorithm():
     print("Please ensure you are correctly calling the algorithm, or ensure it is implemented.")
+    help()
+
+# Provides help with the function
+def help():
+    print("The argument format is python sort-test.py _algorithm_(string (name)) "+
+        "_tests_(int (0-4)). The test argument is optional. You can find information "+
+        "on the algorithms that have been implemented in the algorithms.md file")
+
 
 # Checks the count and validity of CLI arguments - return negative if invalid
 def check_for_args():
@@ -135,7 +143,8 @@ def main():
     elif args == -1:    # Invalid entry
         broken_args()
     elif args == 1:
-        print("PRINT HELP")
+        print("This is the help feature with the sort-test.")
+        help()
     elif args == 2:     # Small elements - Algorithm name given
         for element in sort_array:
             print(sort_dict[sys.argv[1]](element))

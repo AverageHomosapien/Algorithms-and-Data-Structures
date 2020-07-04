@@ -1,4 +1,4 @@
-
+# https://www.youtube.com/watch?v=kPRA0W1kECg - YouTube video with 15 sorting algorithms
 # Selection Sort
 def selection(array):
     count = 0
