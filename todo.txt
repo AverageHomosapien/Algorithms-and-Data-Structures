@@ -1,5 +1,9 @@
 Test.py
 TODO: Implement random test arrays
+TODO: Allow users to custom test the algorithm they wish to use (different sorting methods etc)
+TODO: Implement a timer to check the length of time taken for sort/etc
+TODO: Implement a way of checking the number of swaps/evaluations
+TODO: Re-implement the test suite
 
 sorting.py
 TODO: Implement other sorting algorithms

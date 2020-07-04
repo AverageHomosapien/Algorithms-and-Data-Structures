@@ -5,7 +5,6 @@ def selection(array):
     innerloop = 0
     min_num = 10000000
     min_pos = 0
-    print(array[0])
     for element in array: # Loop through array
         for j in range(innerloop, len(array)): # Decreases array search space
             if array[j] < min_num:
