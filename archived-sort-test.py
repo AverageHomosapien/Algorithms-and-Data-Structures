@@ -1,18 +1,8 @@
 # Test file for various algorithms
-import sort as st
+import sorting as st
 import sys
 import random
 import time
-
-'''
-Program input:
-python sort-test.py _algorithm_(string (name)) _tests_(int (0-4))
-You can also leave out all parameters for help with the function
-
-Parameter 1: Name of Algorithm / Empty for help
-Parameter 2: 1: small, 2: medium, 3: large, 0: all
-'''
-
 
 # Initialises arrays between 0-10
 def init_small():
@@ -27,13 +17,12 @@ def init_small():
     array8 = [5,8,2,8,3,5,5,8,2,3]
     array9 = [1,8,5,1,3,5,6,10,8,7]
 
-    temp_array = [array0, array1, array2, array3, array4,
-            array5, array6, array7, array8, array9]
-    return temp_array
-
+    array = [array0, array1, array2, array3, array4,
+                 array5, array6, array7, array8, array9]
+    return array
 
 # Initialises arrays from 0-100
-def init_medium():
+def init_medium():  # Random.randint(0, 100)
     array10 = [26,33,29,89,66,55,29,65,25,73]
     array11 = [99,31,51,39,84,55,26,70,38,68]
     array12 = [76,42,51,73,47,22,17,34,19,14]
@@ -45,13 +34,12 @@ def init_medium():
     array18 = [21,32,94,40,83,73,22,47,86,61]
     array19 = [29,18,93,27,45,2,21,8,15,87]
 
-    temp_array = [array10, array11, array12, array13, array14,
+    array = [array10, array11, array12, array13, array14,
                  array15, array16, array17, array18, array19]
-    return temp_array
-
+    return array
 
 # Initialises arrays from 0-1000
-def init_large():
+def init_large():  # Random.randint(0, 1000)
     array20 = [285,336,765,181,713,923,427,288,611,622]
     array21 = [60,939,917,291,831,285,452,279,857,832]
     array22 = [737,722,251,415,644,887,248,856,403,302]
@@ -63,26 +51,13 @@ def init_large():
     array28 = [38,622,292,48,808,558,35,551,344,851]
     array29 = [307,947,199,326,830,137,443,608,244,384]
 
-    temp_array = [array20, array21, array22, array23, array24,
-                array25, array26, array27, array28, array29]
-    return temp_array
+    array = [array20, array21, array22, array23, array24,
+             array25, array26, array27, array28, array29]
+    return array
 
-
-# Initialises all arrays
-def init_all():
-    small_arr = init_small()
-    med_arr = init_medium()
-    large_arr = init_large()
-
-    full_array = small_arr + med_arr + large_arr
-    return full_array
-
-
-# Dictionary mapping sort algorithms to user input
-sort_dict = {'selection': st.selection, 'insertion': st.insertion}
-
-# Dictionary mapping benchmark test suite to user input
-size_dict = {1: 'small', 2: 'medium', 3: 'large', 0: 'all'}
+# 0 is sort-test call
+# 1 is help or algorithm name
+# 2 is small/medium/large/all
 
 # If entered arguments are broken
 def broken_args():
@@ -93,22 +68,23 @@ def broken_args():
 def wrong_algorithm():
     print("Please ensure you are correctly calling the algorithm, or ensure it is implemented.")
 
-# Checks the count and validity of CLI arguments - return negative if invalid
+# Checks the number and validity of entered arguments - return -1 if invalid
 def check_for_args():
     if len(sys.argv) > 3:
         return -1
 
-    try:  # Checking chosen algorithm is valid
+    # Checking argument 2 is a valid int within bounds
+    try:
         if len(sys.argv) > 1:
-            if sys.argv[1].lower() not in sort_dict:
-                return -2
+            if int(sys.argv[2]) < 0 or int(sys.argv[2]) > len(arr_array):
+                return -1
     except:
         return -1
 
-    try: # Checking chosen tests are valid (small/medium/large/all)
+    # Checking argument 3 is a valid bool
+    try:
         if len(sys.argv) > 2:
-            if int(sys.argv[2]) not in size_dict:
-                return -1
+            bool(sys.argv[3])
     except:
         return -1
     return len(sys.argv)
@@ -117,31 +93,23 @@ def check_for_args():
 # Testing sort
 def main():
     args = check_for_args()
-    sort_array = []
-    if args > 2: # If argument entered
-        if size_dict[int(sys.argv[2])] == 'small':
-            sort_array = init_small()
-        elif size_dict[int(sys.argv[2])] == 'medium':
-            sort_array = init_medium()
-        elif size_dict[int(sys.argv[2])] == 'large':
-            sort_array = init_large()
-        else:
-            sort_array = init_all()
-    else:
-        sort_array = init_small()
 
-    if args == -2:
-        wrong_algorithm()
-    elif args == -1:    # Invalid entry
+    if args == -1:    # Invalid entry
         broken_args()
-    elif args == 1:
-        print("PRINT HELP")
-    elif args == 2:     # Small elements - Algorithm name given
-        for element in sort_array:
-            print(sort_dict[sys.argv[1]](element))
-    elif args == 3:     # Number of elements chosen
-        for element in sort_array:
-            print(sort_dict[sys.argv[1]](element))
+    if args == 2:     # All elements
+        for element in arr_array:
+            print(st.selection(element))
+    if args == 3:     # Number of elements chosen
+        for element in range(0, int(sys.argv[2])):
+            print(st.selection(arr_array[element]))
+    if args == 4:     # Random elements
+        if sys.argv[3] == 'True':
+            for element in range(0, int(sys.argv[2])):
+                print(st.selection(arr_array[random.randint(0, len(arr_array)-1)]))
+        else:
+            for element in range(0, int(sys.argv[2])):
+                print(st.selection(arr_array[element]))
+
 
 if __name__ == "__main__":
     main()
