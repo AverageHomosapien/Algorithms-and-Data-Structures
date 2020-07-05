@@ -13,6 +13,12 @@ Parameter 1: Name of Algorithm / Empty for help
 Parameter 2: 1: small, 2: medium, 3: large, 0: all
 '''
 
+# Dictionary mapping sort algorithms to user input
+sort_dict = {'selection': st.selection, 'insertion': st.insertion, 'quick_sort': st.quick_sort}
+
+# Dictionary mapping benchmark test suite to user input
+size_dict = {1: 'small', 2: 'medium', 3: 'large', 0: 'all'}
+
 
 # Initialises arrays between 0-10
 def init_small():
@@ -77,12 +83,6 @@ def init_all():
     full_array = small_arr + med_arr + large_arr
     return full_array
 
-
-# Dictionary mapping sort algorithms to user input
-sort_dict = {'selection': st.selection, 'insertion': st.insertion}
-
-# Dictionary mapping benchmark test suite to user input
-size_dict = {1: 'small', 2: 'medium', 3: 'large', 0: 'all'}
 
 # Error message
 def broken_args():

@@ -34,3 +34,7 @@ def insertion(array):
             array[found_pos] = temp
         found = False
     return array
+
+# Quick Sort
+def quick_sort(array):
+    print("quick sort")

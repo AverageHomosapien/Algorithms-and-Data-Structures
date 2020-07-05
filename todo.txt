@@ -9,3 +9,8 @@ TODO: Implement other sorting algorithms
 future work
 TODO: Implement other algorithms and data structures
 TODO: Add algorithm benchmarks
+
+ongoing:
+TODO: Keep details.md up-to-date
+TODO: Keep algorithms.md up-to-date
+TODO: Keep README.md up-to-date

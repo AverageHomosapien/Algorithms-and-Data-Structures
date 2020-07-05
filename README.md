@@ -1,6 +1,6 @@
 # Algorithms and Data Structures
- A repository of my implementations of various data structures and algorithms
+ A repository of various data structures and algorithms that I've implemented
 
 ## How to Use
- For further information on how to use the library, you can call info.py in the base
- directory, or pass 'help' when calling an algorithm category
+ For further information on how to use the library, you can call the info.py class.
+ For specific test information, you can call the base test class.
