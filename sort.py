@@ -1,3 +1,12 @@
+# Sort Algorithms Alphabetically
+# Bubble Sort Algorithm
+def bubble(array):
+    for j in array:
+        for i in range(0, len(array)-1):
+            if array[i] > array[i+1]:
+                array[i], array[i+1] = array[i+1], array[i]
+    return array
+
 # Selection Sort
 def selection(array):
     count = 0
@@ -52,13 +61,8 @@ def heap(array):
 
 
 # Radix Sort Algorithm
-def radix_(array):
+def radix(array):
     print("radix sort not yet implemented")
-
-
-# Bubble Sort Algorithm
-def bubble(array):
-    print("bubble sort not yet implemented")
 
 
 # Tree Sort Algorithm

@@ -14,7 +14,9 @@ Parameter 2: 1: small, 2: medium, 3: large, 0: all
 '''
 
 # Dictionary mapping sort algorithms to user input
-sort_dict = {'selection': st.selection, 'insertion': st.insertion, 'quick_sort': st.quick_sort}
+sort_dict = {'selection': st.selection, 'insertion': st.insertion, 'quick': st.quick,
+            'merge': st.merge, 'heap': st.heap, 'radix': st.radix, 'bubble': st.bubble,
+            'tree': st.tree, 'counting': st.counting, 'bucket': st.bucket}
 
 # Dictionary mapping benchmark test suite to user input
 size_dict = {1: 'small', 2: 'medium', 3: 'large', 0: 'all'}
