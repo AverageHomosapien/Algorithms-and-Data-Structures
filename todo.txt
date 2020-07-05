@@ -1,16 +1,18 @@
-Test.py
+test.py
 TODO: Implement random test arrays
-TODO: Implement a timer to check the length of time taken for sort/etc
 TODO: Implement a way of checking the number of swaps/evaluations
 
-sorting.py
+sort.py
 TODO: Implement other sorting algorithms
 
-future work
+Future Work
 TODO: Implement other algorithms and data structures
 TODO: Add algorithm benchmarks
 
-ongoing:
+Ongoing:
 TODO: Keep details.md up-to-date
 TODO: Keep algorithms.md up-to-date
 TODO: Keep README.md up-to-date
+
+Done Tasks:
+Implement a timer to check the length of time taken for sort/etc

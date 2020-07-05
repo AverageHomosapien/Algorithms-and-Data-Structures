@@ -2,7 +2,7 @@
 import sort as st
 import sys
 import random
-import time
+import timeit
 
 '''
 Program input:
@@ -124,6 +124,8 @@ def check_for_args():
 
 # Testing sort
 def main():
+    start_timer = timeit.default_timer()
+    stop_timer = timeit.default_timer()
     args = check_for_args()
     sort_array = []
     if args > 2: # If argument entered
@@ -146,11 +148,16 @@ def main():
         print("This is the help feature with the sort-test.")
         help()
     elif args == 2:     # Small elements - Algorithm name given
+        start_timer = timeit.default_timer()
         for element in sort_array:
             print(sort_dict[sys.argv[1]](element))
+        stop_timer = timeit.default_timer()
     elif args == 3:     # Number of elements chosen
+        start_timer = timeit.default_timer()
         for element in sort_array:
             print(sort_dict[sys.argv[1]](element))
+        stop_timer = timeit.default_timer()
+    print("Seconds taken: " + str(stop_timer-start_timer))
 
 if __name__ == "__main__":
     main()

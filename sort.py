@@ -1,4 +1,3 @@
-# https://www.youtube.com/watch?v=kPRA0W1kECg - YouTube video with 15 sorting algorithms
 # Selection Sort
 def selection(array):
     count = 0
@@ -16,6 +15,7 @@ def selection(array):
         min_num = 1000000000
         count = innerloop
     return array
+
 
 # Insertion Sort
 def insertion(array):
@@ -35,6 +35,42 @@ def insertion(array):
         found = False
     return array
 
-# Quick Sort
-def quick_sort(array):
-    print("quick sort")
+
+# Quick Sort Pivot Algorithm - https://www.tutorialspoint.com/data_structures_algorithms/quick_sort_algorithm.htm
+def quick(array):
+    print("quick sort not yet implemented")
+
+
+# Merge Sort Algorithm
+def merge(array):
+    print("merge sort not yet implemented")
+
+
+# Heap Sort Algorithm
+def heap(array):
+    print("heap sort not yet implemented")
+
+
+# Radix Sort Algorithm
+def radix_(array):
+    print("radix sort not yet implemented")
+
+
+# Bubble Sort Algorithm
+def bubble(array):
+    print("bubble sort not yet implemented")
+
+
+# Tree Sort Algorithm
+def tree(array):
+    print("tree sort not yet implemented")
+
+
+# Counting Sort Algorithm
+def counting(array):
+    print("counting sort not yet implemented")
+
+
+# Bucket Sort Algorithm
+def bucket(array):
+    print("bucket sort not yet implemented")
