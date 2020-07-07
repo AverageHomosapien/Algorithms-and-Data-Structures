@@ -7,13 +7,40 @@ def bubble(array):
                 array[i], array[i+1] = array[i+1], array[i]
     return array
 
+
+# Bucket Sort Algorithm
+def bucket(array):
+    return_arr = []
+    buckets = [None] * len(array)
+    scale = max(array) - min(array)
+    for element in array:
+        # Calculate the bin
+        bin = int(round(((element - min(array)) / scale), ndigits=1) * (len(array) -1))
+        if buckets[bin] is None:
+            buckets[bin] = element
+        elif type(buckets[bin]) is list:
+            buckets[bin].append(element)  # Appends to 2d array element
+        else:
+            buckets[bin] = [buckets[bin], element]  # Creates 2d element in array
+    for idx, element in enumerate(buckets):
+        if buckets[idx] is None:
+            continue
+        elif type(buckets[idx]) is list:
+            sorted = insertion(buckets[idx])  # Insertion sort on 'full buckets'
+            for item in sorted:
+                return_arr.append(item)
+        else:
+            return_arr.append(buckets[idx])
+    return return_arr
+
+
 # Selection Sort
 def selection(array):
     count = 0
     innerloop = 0
     min_num = 1000000000
     min_pos = 0
-    for element in array: # Loop through array
+    for element in array:
         for j in range(innerloop, len(array)): # Decreases array search space
             if array[j] < min_num:
                 min_num = array[j]
@@ -73,8 +100,3 @@ def tree(array):
 # Counting Sort Algorithm
 def counting(array):
     print("counting sort not yet implemented")
-
-
-# Bucket Sort Algorithm
-def bucket(array):
-    print("bucket sort not yet implemented")

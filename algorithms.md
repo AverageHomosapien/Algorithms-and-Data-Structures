@@ -8,7 +8,7 @@ None yet
 ## Sort:
 Bubble sort - https://en.wikipedia.org/wiki/Bubble_sort
 
-Bucket sort - https://en.wikipedia.org/wiki/Bucket_sort         (not yet implemented)
+Bucket sort - https://en.wikipedia.org/wiki/Bucket_sort
 
 Counting sort - https://en.wikipedia.org/wiki/Counting_sort     (not yet implemented)
 
