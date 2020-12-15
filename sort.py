@@ -74,7 +74,22 @@ def insertion(array):
 
 # Quick Sort Pivot Algorithm - https://www.tutorialspoint.com/data_structures_algorithms/quick_sort_algorithm.htm
 def quick(array):
-    print("quick sort not yet implemented")
+    pivot_no = 1
+    pivot.append() = array[-1]
+    low = 0
+    high = len(array[-1])
+    arr_sorted = False
+    while !arr_sorted:
+        for i in range(0, pivot_no):
+            while array[low] < pivot[i]:
+                low += 1
+            while array[high] > pivot[i]:
+                high -= 1
+            high, low = low, high
+
+
+
+
 
 
 # Merge Sort Algorithm
