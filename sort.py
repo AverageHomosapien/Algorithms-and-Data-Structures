@@ -1,4 +1,3 @@
-# Sort Algorithms Alphabetically
 # Bubble Sort Algorithm
 def bubble(array):
     for j in array:
